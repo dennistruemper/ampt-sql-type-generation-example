@@ -14,8 +14,8 @@ interface TodosTable {
 
 const db = new Kysely<Database>();
 
-// Insert a post
-const post = await db
+// Insert a todo
+const todo = await db
   .insertInto("todos")
   .values({
     caption: "My first todo",
@@ -24,3 +24,10 @@ const post = await db
   })
   .returningAll()
   .executeTakeFirstOrThrow();
+
+const todos = await db // remember our first todos do not have done column and it is allowed to be null in database
+  .selectFrom("todos")
+  .selectAll()
+  .execute();
+
+todos.map((t) => t.done.valueOf());

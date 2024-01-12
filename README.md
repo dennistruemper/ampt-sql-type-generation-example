@@ -33,3 +33,7 @@ Happy coding!
    - Add a new column done of type bool without not null constraint (create file migrations/0002_expand-todos-table-with-done.js)
    - Extend types in index.ts
    - run `run migrate` inside ampt cli again
+7. Hello "Cannot read properties of null" :/
+   - So you remember, we created some todos without done in the beginning
+   - now we will read all todos and to something with done in a typesscript allowed way (see index.ts)
+   - now we will get an "Failed to load application" error in the ampt CLI, if we try to start.
