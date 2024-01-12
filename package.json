@@ -6,7 +6,10 @@
   "main": "index.ts",
   "type": "module",
   "scripts": {
-    "start": "ampt"
+    "start": "ampt",
+    "ampt:migrate": "ampt-sql migrate",
+    "ampt:migrate-up": "ampt-sql migrate --up",
+    "ampt:migrate-down": "ampt-sql migrate --down"
   },
   "ampt": {
     "app": "ampt-sql-type-generation",
@@ -20,6 +23,7 @@
     "kysely": "0.27.2"
   },
   "devDependencies": {
+    "@ampt/cli": "1.0.30",
     "kysely-codegen": "0.11.0",
     "pg": "8.11.3"
   }

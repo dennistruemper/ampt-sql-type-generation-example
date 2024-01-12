@@ -17,4 +17,7 @@ Happy coding!
    - create this File
 2. Install dependencies
    - `npm install --save-exact @ampt/sql kysely`
-   - `npm install --save-exact --save-dev kysely-codegen pg`
+   - `npm install --save-exact --save-dev kysely-codegen pg @ampt/cli`
+3. Add first migration
+   - create file migrations/0001_create-todos-table.js with content
+   - add migrate ampt scripts in package.json
