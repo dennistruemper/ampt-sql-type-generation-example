@@ -12,4 +12,9 @@ Happy coding!
 
 ## Steps done to create this
 
-1. Initial Project setup using typescript starter
+1. Initial Project setup
+   - using typesript starter
+   - create this File
+2. Install dependencies
+   - `npm install --save-exact @ampt/sql kysely`
+   - `npm install --save-exact --save-dev kysely-codegen pg`
