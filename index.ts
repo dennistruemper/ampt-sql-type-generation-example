@@ -8,7 +8,8 @@ interface Database {
 interface TodosTable {
   id: GeneratedAlways<number>;
   caption: string;
-  description: string; // typo on purpose to show how error prone this is
+  description: string;
+  done: boolean; // This column is not nullable by type even though it is in the database
 }
 
 const db = new Kysely<Database>();
@@ -16,6 +17,10 @@ const db = new Kysely<Database>();
 // Insert a post
 const post = await db
   .insertInto("todos")
-  .values({ caption: "My first todo", description: "This is my first todo!" })
+  .values({
+    caption: "My first todo",
+    description: "This is my first todo!",
+    done: false,
+  })
   .returningAll()
   .executeTakeFirstOrThrow();

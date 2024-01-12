@@ -8,5 +8,5 @@ export async function up(db) {
 }
 
 export async function down(db) {
-  await db.schema.dropTable("posts").execute();
+  await db.schema.dropTable("todos").execute();
 }

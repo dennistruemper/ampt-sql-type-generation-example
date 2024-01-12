@@ -23,8 +23,13 @@ Happy coding!
    - add migrate ampt scripts in package.json
 4. Use SQL in ampt index file
    - by using sql ampt will spin up a SQL database (index.ts)
+   - run `run migrate` inside ampt cli
    - this will get you an error message in the ampt cli: `'column "doscription" of relation "todos" does not exist'`
 5. Fix the Error
    - Rename doscription to description in index.ts
    - if closed start the ampt cli again `npm start`
    - check in the ampt web console that the table was created in your sandbox
+6. Create type missmatch
+   - Add a new column done of type bool without not null constraint (create file migrations/0002_expand-todos-table-with-done.js)
+   - Extend types in index.ts
+   - run `run migrate` inside ampt cli again
