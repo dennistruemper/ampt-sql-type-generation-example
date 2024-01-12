@@ -24,3 +24,7 @@ Happy coding!
 4. Use SQL in ampt index file
    - by using sql ampt will spin up a SQL database (index.ts)
    - this will get you an error message in the ampt cli: `'column "doscription" of relation "todos" does not exist'`
+5. Fix the Error
+   - Rename doscription to description in index.ts
+   - if closed start the ampt cli again `npm start`
+   - check in the ampt web console that the table was created in your sandbox
