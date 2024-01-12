@@ -45,3 +45,5 @@ Happy coding!
    - add an entry to package.json to generate
    - typ by runing `npx ampt run generate`
    - have a look at `src/sql/dbTypes.d.ts`
+9. Using generated types
+   - have a look at `index.ts` again

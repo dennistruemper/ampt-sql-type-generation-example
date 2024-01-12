@@ -1,18 +1,7 @@
 import { Kysely } from "@ampt/sql";
-import { GeneratedAlways } from "kysely";
+import { DB } from "./src/sql/dbTypes.js";
 
-interface Database {
-  todos: TodosTable;
-}
-
-interface TodosTable {
-  id: GeneratedAlways<number>;
-  caption: string;
-  description: string;
-  done: boolean; // This column is not nullable by type even though it is in the database
-}
-
-const db = new Kysely<Database>();
+const db = new Kysely<DB>();
 
 // Insert a todo
 const todo = await db
@@ -25,9 +14,8 @@ const todo = await db
   .returningAll()
   .executeTakeFirstOrThrow();
 
-const todos = await db // remember our first todos do not have done column and it is allowed to be null in database
-  .selectFrom("todos")
-  .selectAll()
-  .execute();
+const todos = await db.selectFrom("todos").selectAll().execute();
 
-todos.map((t) => t.done.valueOf());
+// now typescript will let us know there is a possible null value
+// and we should handle this case, try removing the `?` from `done` to see the error
+todos.map((t) => t.done?.valueOf());
