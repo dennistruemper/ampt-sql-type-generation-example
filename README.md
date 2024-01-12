@@ -53,3 +53,13 @@ Happy coding!
     - modify `package.json` to automate this
     - one case not handled is, when there are 2 branches at the same time and both have schema changes. But you schould get merge conflicts in git in this case. And run the generate script again to fix these.
     - check if everything is correct by deleting your `dbTypes.d.ts` file and executing `npx ampt run migrate` to see the file be created again.
+11. Check if types are correct
+    - add checkTypes scritp to `package.json`
+    - restored error in `index.ts`
+    - run `num run checkTypes` and it fails.
+12. Continue and use in your project
+    - some examples what you can do
+      - check types in CI
+      - check types after every generation of dbTypes
+      - generate and check types in CI
+      - don't have a gab between database schema and database types ever again :-)

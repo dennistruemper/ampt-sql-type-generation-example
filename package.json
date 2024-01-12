@@ -7,6 +7,7 @@
   "type": "module",
   "scripts": {
     "start": "ampt",
+    "checkTypes": "tsc --skipLibCheck -p . --noEmit",
     "ampt:migrate": "ampt-sql migrate && npm run ampt:generate",
     "ampt:migrate-up": "ampt-sql migrate --up && npm run ampt:generate",
     "ampt:migrate-down": "ampt-sql migrate --down && npm run ampt:generate",
@@ -27,6 +28,7 @@
     "@ampt/cli": "1.0.30",
     "@ampt/sdk": "1.0.8",
     "kysely-codegen": "0.11.0",
-    "pg": "8.11.3"
+    "pg": "8.11.3",
+    "typescript": "5.3.3"
   }
 }

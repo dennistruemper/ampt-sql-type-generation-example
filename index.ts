@@ -16,6 +16,4 @@ const todo = await db
 
 const todos = await db.selectFrom("todos").selectAll().execute();
 
-// now typescript will let us know there is a possible null value
-// and we should handle this case, try removing the `?` from `done` to see the error
-todos.map((t) => t.done?.valueOf());
+todos.map((t) => t.done.valueOf()); // hord to see error here
