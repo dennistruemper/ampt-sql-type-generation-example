@@ -47,3 +47,9 @@ Happy coding!
    - have a look at `src/sql/dbTypes.d.ts`
 9. Using generated types
    - have a look at `index.ts` again
+10. Do not forget to generate the types - by forcing it
+    - we usually need to generate the types whenever there is a change in the database schema
+    - so generating the types whenever we execute a migration should cover most of the cases
+    - modify `package.json` to automate this
+    - one case not handled is, when there are 2 branches at the same time and both have schema changes. But you schould get merge conflicts in git in this case. And run the generate script again to fix these.
+    - check if everything is correct by deleting your `dbTypes.d.ts` file and executing `npx ampt run migrate` to see the file be created again.

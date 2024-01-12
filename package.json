@@ -7,9 +7,9 @@
   "type": "module",
   "scripts": {
     "start": "ampt",
-    "ampt:migrate": "ampt-sql migrate",
-    "ampt:migrate-up": "ampt-sql migrate --up",
-    "ampt:migrate-down": "ampt-sql migrate --down",
+    "ampt:migrate": "ampt-sql migrate && npm run ampt:generate",
+    "ampt:migrate-up": "ampt-sql migrate --up && npm run ampt:generate",
+    "ampt:migrate-down": "ampt-sql migrate --down && npm run ampt:generate",
     "ampt:generate": "./scripts/generateDbTypes.sh"
   },
   "ampt": {
