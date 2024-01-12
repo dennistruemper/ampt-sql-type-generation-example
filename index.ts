@@ -1,0 +1,21 @@
+import { Kysely } from "@ampt/sql";
+import { GeneratedAlways } from "kysely";
+
+interface Database {
+  todos: TodosTable;
+}
+
+interface TodosTable {
+  id: GeneratedAlways<number>;
+  caption: string;
+  doscription: string; // typo on purpose to show how error prone this is
+}
+
+const db = new Kysely<Database>();
+
+// Insert a post
+const post = await db
+  .insertInto("todos")
+  .values({ caption: "My first todo", doscription: "This is my first todo!" })
+  .returningAll()
+  .executeTakeFirstOrThrow();

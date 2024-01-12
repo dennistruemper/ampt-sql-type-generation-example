@@ -21,3 +21,6 @@ Happy coding!
 3. Add first migration
    - create file migrations/0001_create-todos-table.js with content
    - add migrate ampt scripts in package.json
+4. Use SQL in ampt index file
+   - by using sql ampt will spin up a SQL database (index.ts)
+   - this will get you an error message in the ampt cli: `'column "doscription" of relation "todos" does not exist'`
