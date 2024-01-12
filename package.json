@@ -1,0 +1,19 @@
+{
+  "name": "@ampt-templates/typescript-starter",
+  "version": "1.0.0",
+  "description": "Ampt TypeScript template",
+  "private": true,
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "ampt"
+  },
+  "ampt": {
+    "app": "ampt-sql-type-generation",
+    "org": "dennistruemper269889"
+  },
+  "files": [
+    "*"
+  ],
+  "dependencies": {}
+}
